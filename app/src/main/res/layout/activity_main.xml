@@ -12,281 +12,143 @@
 
     <TextView
         android:id="@+id/tvOperation"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="@dimen/common_padding_min"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        android:textColor="?colorOnSurface"
-        android:background="?colorSurface"
         tools:text="5x2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/tvResult"
-        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="@dimen/common_padding_min"
         android:textAppearance="?attr/textAppearanceHeadline3"
-        android:textColor="?colorOnSurface"
-        android:background="?colorSurface"
         android:gravity="center_vertical|end"
         android:layout_marginBottom="@dimen/common_padding_min"
         tools:text="10.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvOperation"
-        app:layout_constraintBottom_toTopOf="@id/llTop"/>
+        app:layout_constraintBottom_toTopOf="@id/llTop"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"/>
 
     <!-- DimensionRatio para que la altura (H) de adapte a cualquier dispositivo -->
     <!-- 4:1 definirá la rel ancho por alto -->
 
     <LinearLayout
         android:id="@+id/llBottom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio="H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
 
         <!-- BackgroundTint permite modificar el color del boton sin alterar su comportamiento -->
         <Button
             android:id="@+id/btnPoint"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_point"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_700"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonSecondary"/>
         <Button
             android:id="@+id/btnZero"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_zero"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnResolve"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="50"
             android:text="@string/calc_btn_resolve"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_700"
-            android:onClick="onClickButton"/>
+            android:layout_marginStart="@dimen/common_padding_default"
+            style="@style/ButtonSecondary"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llPreBottom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio="H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/llBottom">
+        app:layout_constraintBottom_toTopOf="@id/llBottom"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
         <Button
             android:id="@+id/btnOne"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_one"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnTwo"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_two"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnThree"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_three"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnSum"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_sum"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/purple_500"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonOperator"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llMiddle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio="H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/llPreBottom">
+        app:layout_constraintBottom_toTopOf="@id/llPreBottom"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
         <Button
             android:id="@+id/btnFour"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_four"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnFive"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_five"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnSix"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_six"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnSub"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_sub"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/purple_500"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonOperator"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llPreTop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding_min"
         app:layout_constraintBottom_toTopOf="@id/llMiddle"
-        app:layout_constraintDimensionRatio="H, 4:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btnSeven"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_weight="25"
-            android:backgroundTint="@color/teal_200"
             android:text="@string/calc_btn_seven"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:onClick="onClickButton"/>
-
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnEight"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_weight="25"
-            android:backgroundTint="@color/teal_200"
             android:text="@string/calc_btn_eight"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:onClick="onClickButton"/>
-
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnNine"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_200"
-            android:layout_weight="25"
             android:text="@string/calc_btn_nine"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:onClick="onClickButton"/>
-
+            style="@style/ButtonNumeric"/>
         <Button
             android:id="@+id/btnMulti"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_weight="25"
-            android:backgroundTint="@color/purple_500"
             android:text="@string/calc_btn_multi"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonOperator"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llTop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding_min"
         app:layout_constraintBottom_toTopOf="@id/llPreTop"
-        app:layout_constraintDimensionRatio="H, 4:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
         <Button
             android:id="@+id/btnClear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="50"
             android:text="@string/calc_btn_clear"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/purple_200"
-            android:onClick="onClickButton"/>
+            android:backgroundTint="@color/red_500"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            style="@style/MyButtonBase"/>
         <!-- Delete para borrar el último caracter -->
         <!-- MaterialButton permite insertar íconos -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDelete"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/teal_700"
             app:icon="@drawable/ic_backspace"
             app:iconGravity="textStart"
             app:iconPadding="@dimen/common_padding_none"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonSecondary"/>
         <Button
             android:id="@+id/btnDiv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/calc_btn_div"
-            android:textSize="@dimen/calc_btn_text_size"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:backgroundTint="@color/purple_500"
-            android:onClick="onClickButton"/>
+            style="@style/ButtonOperator"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
